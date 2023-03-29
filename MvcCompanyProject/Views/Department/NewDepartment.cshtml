@@ -1,0 +1,12 @@
+﻿@model MvcCompanyProject.Models.Department
+@{
+    ViewData["Title"] = "NewDepartment";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h2 style="margin-left:7px">Yeni Departman Ekleme Sayfası</h2>
+<br />
+<form action="NewDepartment" method="post" class="form-group">
+    <input type="text" name="DepartmentName" class="form-control" placeholder="Departman Adı" autofocus /><br />
+    <input type="submit" value=" Ekle " class="btn btn-primary" />
+</form>

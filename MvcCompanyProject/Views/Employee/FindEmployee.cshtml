@@ -1,0 +1,21 @@
+﻿@model MvcCompanyProject.Models.Employee
+@{
+    ViewData["Title"] = "FindEmployee";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h2 style="margin-left:7px">Personel Bilgileri</h2>
+<br />
+<form method="post" class="form-group">
+    <label style="margin-left:7px"><b>Personel Id</b></label><br />
+    <input type="number" value="@Model.EmployeeId" class="form-control" readonly /><br />
+    <label style="margin-left:7px"><b>Personel Adı</b></label><br />
+    <input type="text" value="@Model.EmployeeName" class="form-control" readonly /><br />
+    <label style="margin-left:7px"><b>Personel Soyadı</b></label><br />
+    <input type="text" value="@Model.EmployeeSurname" class="form-control" readonly /><br />
+    <label style="margin-left:7px"><b>Şehir</b></label><br />
+    <input type="text" value="@Model.EmployeeCity" class="form-control" readonly /><br />
+    <label style="margin-left:7px"><b>Departman</b></label><br />
+    <input type="text" value="@Model.Department.DepartmentName" class="form-control" readonly /><br />
+    <a href="/Employee/UpdateEmployee/@Model.EmployeeId" class="btn btn-warning">Bilgileri Güncelle</a>
+</form>

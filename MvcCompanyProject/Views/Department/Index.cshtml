@@ -1,0 +1,35 @@
+﻿@using MvcCompanyProject.Models
+@model List<Department>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h1 style="margin-left:570px">Departman Listesi</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th> </th>
+        <th>Departman Id</th>
+        <th>Departman Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @{
+        int i = 0;
+    }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@{i++;} @i</td>
+            <td>@item.DepartmentId</td>
+            <td>@item.DepartmentName</td>
+            <td><a href="/Department/DeleteDepartment/@item.DepartmentId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Department/FindDepartment/@item.DepartmentId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Department/DetailsDepartment/@item.DepartmentId" class="btn btn-warning">Detaylar</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Department/NewDepartment/" class="btn btn-primary">Yeni Departman Ekle</a>

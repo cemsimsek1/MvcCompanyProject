@@ -1,0 +1,29 @@
+﻿@using MvcCompanyProject.Models
+@model List<Employee>
+@{
+    ViewData["Title"] = "DetailsDepartment";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h2 style="margin-left:7px">@ViewBag.depdet Departmanı</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th> </th>
+        <th>Personel Id</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Şehir</th>
+    </tr>
+    @{int i = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@{i++;} @i</td>
+            <td>@item.EmployeeId</td>
+            <td>@item.EmployeeName</td>
+            <td>@item.EmployeeSurname</td>
+            <td>@item.EmployeeCity</td>
+        </tr>
+    }
+</table>

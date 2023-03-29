@@ -1,0 +1,16 @@
+﻿@model MvcCompanyProject.Models.Department
+@{
+    ViewData["Title"] = "UpdateDepartment";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h2 style="margin-left:7px">Departman Bilgilerini Güncelle</h2>
+<br />
+<form action="UpdateDepartment" method="post" class="form-group">
+    <label><b>Departman Id</b></label><br />
+    <input type="number" value="@Model.DepartmentId" name="DepartmentId" class="form-control" readonly /><br />
+    <label><b>Departman Adı</b></label><br />
+    <input type="text" value="@Model.DepartmentName" name="DepartmentName" class="form-control" autofocus /><br />
+    <input type="submit" value="Değişiklikleri Kaydet" class="btn btn-success" />
+</form>
+

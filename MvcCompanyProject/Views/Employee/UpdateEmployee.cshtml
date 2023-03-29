@@ -1,0 +1,21 @@
+﻿@model MvcCompanyProject.Models.Employee
+@{
+    ViewData["Title"] = "UpdateEmployee";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h2 style="margin-left:7px">Personel Güncelleme Sayfası</h2>
+<br />
+<form action="UpdateEmployee" method="post" class="form-group">
+    <label style="margin-left:7px"><b>Personel Id</b></label><br />
+    <input type="number" value="@Model.EmployeeId" name="EmployeeId" class="form-control" readonly /><br />
+    <label style="margin-left:7px"><b>Personel Adı</b></label><br />
+    <input type="text" value="@Model.EmployeeName" name="EmployeeName" class="form-control" autofocus /><br />
+    <label style="margin-left:7px"><b>Personel Soyadı</b></label><br />
+    <input type="text" value="@Model.EmployeeSurname" name="EmployeeSurname" class="form-control" /><br />
+    <label style="margin-left:7px"><b>Şehir</b></label><br />
+    <input type="text" value="@Model.EmployeeCity" name="EmployeeCity" class="form-control" /><br />
+    <label style="margin-left:7px"><b>Departman</b></label><br />
+    @Html.DropDownListFor(x=>x.Department.DepartmentId, (List<SelectListItem>)ViewBag.vls, new { @class = "form-control"})<br />
+    <input type="submit" value="Değişiklikleri Kaydet" class="btn btn-success" />
+</form>

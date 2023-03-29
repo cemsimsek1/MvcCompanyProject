@@ -1,0 +1,40 @@
+﻿@using MvcCompanyProject.Models
+@model List<Employee>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h1 style="margin-left:570px">Personel Listesi</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th> </th>
+        <th>Personel ID</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Şehir</th>
+        <th>Departman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @{
+        int i = 0;
+    }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@{i++;} @i</td>
+            <td>@item.EmployeeId</td>
+            <td>@item.EmployeeName</td>
+            <td>@item.EmployeeSurname</td>
+            <td>@item.EmployeeCity</td>
+            <td>@item.Department.DepartmentName</td>
+            <td><a href="/Employee/DeleteEmployee/@item.EmployeeId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Employee/FindEmployee/@item.EmployeeId" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Employee/NewEmployee/" class="btn btn-primary">Yeni Personel Ekle</a>
+
